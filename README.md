@@ -1,5 +1,7 @@
 # shopping-cart
 
+模仿VueX教程中的购物车网页
+
 > A Vue.js project
 
 ## Build Setup
