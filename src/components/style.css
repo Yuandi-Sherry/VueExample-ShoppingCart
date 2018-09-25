@@ -1,0 +1,63 @@
+.hide {  
+  display: none;
+}
+
+.show { 
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#app {
+  text-align: center;
+}
+
+.content {
+  text-align: center;
+}
+
+tr {
+  border-bottom: #F596AA 1px solid;
+}
+
+th {
+  color: #F596AA;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+td {
+  padding: 10px;
+}
+
+table {
+  position: relative;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+button {
+  background-color: #F596AA;
+  border-style: none;
+  border-radius: 10px;
+  font-size: 16px;
+  padding: 10px;
+  font-weight: bolder;
+  color: white;
+}
+
+button:hover {
+  background-color: #DB4D6D;
+}
+
+h2 {
+  font-size: 24px;
+  color: #DB4D6D;
+}
+
+p {
+  font-size: 14px;
+}
+
+p, button, h2, input, table{
+  font-family: Montserrat;
+}

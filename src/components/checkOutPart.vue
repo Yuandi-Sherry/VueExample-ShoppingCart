@@ -14,7 +14,7 @@ export default {
     ...mapGetters(['message', 'handleTableVisibility'])
   },
   methods: {
-    ...mapActions(['checkOut', 'clearCart'])
+    ...mapActions(['checkOut', 'clearCart', 'updateEachTotalPrice'])
   }
 }
 </script>

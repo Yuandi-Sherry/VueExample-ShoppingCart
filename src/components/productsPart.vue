@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="content">
   <h2>Products in Blocks</h2>
   <p> {{ productMsg }} </p>
   <table :class=handleProductsVisibility>
@@ -10,7 +10,7 @@
     </thead>
     <tr v-for="product in products" :key=product.id>
       <td>{{ product.name }}</td>
-      <td>{{ product.price }}</td>
+      <td>${{ product.price }}</td>
       <td>{{ product.left }}</td>
       <td><button @click='addToCart(product)'>Add to cart</button></td>
     </tr>
@@ -20,5 +20,5 @@
 
 <script type="text/javascript" src="./productsPart.js"></script>
 <style type="text/css">
-@import './cartPart.css'
+@import './style.css'
 </style>

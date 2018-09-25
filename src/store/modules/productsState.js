@@ -1,19 +1,19 @@
 const state = {
   productsList: [
     { id: 1,
-      name: 'iPhone',
-      price: 99,
-      left: 1
+      name: 'iPhone Xs',
+      price: 999,
+      left: 123
     },
     { id: 2,
-      name: 'iPad',
-      price: 23,
-      left: 1
+      name: 'iPhone XR',
+      price: 749,
+      left: 1123
     },
     { id: 3,
-      name: 'iPod',
-      price: 34,
-      left: 2
+      name: 'iPhone 8',
+      price: 599,
+      left: 214
     }]
 }
 

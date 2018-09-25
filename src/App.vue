@@ -19,3 +19,7 @@ export default {
   }
 }
 </script>
+
+<style type="text/css">
+@import './components/style.css'
+</style>

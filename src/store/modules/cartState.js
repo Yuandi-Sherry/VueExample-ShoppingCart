@@ -49,19 +49,29 @@ const getters = {
     return totalPrice
   },
   handleCartVisibility: (state) => {
-    if (state.itemsList.length === 0) {
-      return 'hide'
-    } else {
-      return 'show'
-    }
+  	return cartIsEmpty ? 'show' : 'hide'
+  },
+  clearButtonState: (state) => {
+  	return cartIsEmpty ? 'able' : 'disable'
   }
+}
+
+function cartIsEmpty(state) {
+	if (state.itemsList.length === 0) {
+  		return true
+  	} else {
+  		return false
+  	}
 }
 
 const mutations = {
   add (state, product) {
     var inCart = state.itemsList.find(item => item.id === product.id)
+    console.log('product.id');
+    console.log(typeof(product.id));
     // 货品已经加入购物车
     if (inCart) {
+
       if (inCart.amount + 1 <= productsState.state.productsList.find(item => item.id === inCart.id).left) {
         inCart.amount++
       }
@@ -70,7 +80,6 @@ const mutations = {
     }
   },
   checkOut (state) {
-    console.log(productsState)
     var idToDelete = []
     productsState.state.productsList.forEach(function (product) {
       if (state.itemsList.find(item => item.id === product.id)) {
@@ -87,6 +96,14 @@ const mutations = {
   },
   clearCart (state) {
     state.itemsList.splice(0, state.itemsList.length)
+  },
+  deleteFromCart (state, item) {
+  	state.itemsList.splice(getIndex(state.itemsList, item),1)
+  },
+  updateEachTotalPrice (state, para) {
+  	var inCart = state.itemsList.find(item => item.id == para.id)
+  	console.log(inCart);
+  	inCart.amount = para.amount;
   }
 }
 
@@ -108,6 +125,16 @@ const actions = {
   },
   clearCart ({commit}) {
     commit('clearCart')
+  },
+  deleteFromCart({commit}, item) {
+  	commit('deleteFromCart', item)
+  },
+  updateEachTotalPrice ({commit}, e) {
+  	var para = {
+  		id: e.path[2].id,
+  		amount: e.target.value
+  	}
+  	commit('updateEachTotalPrice', para)
   }
 }
 
